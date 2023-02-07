@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/main.css'
 
+const category = 'sports';
 const apikey = '87bfb93ef955f5ca52a2ae8707529af3';
-const url = 'https://gnews.io/api/v4/search?q=example&apikey=' + apikey + '&lang=en&country=us&max=10';
-
+// const url = 'https://gnews.io/api/v4/search?q=example&apikey=' + apikey + '&lang=en&country=us&max=10';
+const url = 'https://gnews.io/api/v4/top-headlines?category=' + category + '&apikey=' + apikey + '&lang=en&country=us&max=10';
 function Main(){
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ function Main(){
             setLoading(false);
         })
     }, []);
-
+    console.log(articles)
     return(
         <div>
             {loading ? <p>Loading...</p> : <p>Loaded</p>}
