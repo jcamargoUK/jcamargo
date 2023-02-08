@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"; // Import the useState and useEffect hooks from React
-import "../styles/main.css"; // Import the main.css file
-const category = "business"; // Set the category to business
+import '../styles/main.css'
 const apikey = "87bfb93ef955f5ca52a2ae8707529af3"; // Set the apikey to the one i got from GNews
 
 // Create the Main component
@@ -48,7 +47,7 @@ const Main = () => {
             <h2>{article.title}</h2>
             <p>{article.description}</p>
             <p>{article.content}</p>
-            <img src={article.image} alt={article.title} />
+            <img className="article_img" src={article.image} alt={article.title} />
           </li>
         ))}
       </ul>
